@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetterPhotos -- Improve your photography skill</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="page">
+    <div id="app">
+      <header class="header">
+        <img class="logo" src="https://bytegrad.com/course-assets/css/2/logo.svg" />
+        <form action="#" class="search">
+          <input type="text" class="search__input" placeholder="Search photos..." />
+          <button type="submit" class="search__submit">
+            <i class="fas fa-search search__icon"></i>
+          </button>
+        </form>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fas fa-compass nav__icon"></i>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fas fa-fire-alt nav__icon"></i>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fas fa-user nav__icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <aside class="sidebar"></aside>
+      <section class="gallery"></section>
+      <section class="steps"></section>
+    </div>
+
+    <!-- Javascript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
