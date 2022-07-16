@@ -59,7 +59,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 
+/*
   Base Styles
 */
 
@@ -74,10 +74,10 @@ h6 {
 
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
 
-.page::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #app {
@@ -93,7 +93,7 @@ h6 {
   grid-template-rows: 65px 724px 1fr;
 }
 
-/* 
+/*
   Styles
 */
 
@@ -113,64 +113,65 @@ h6 {
 .search {
   position: relative;
   width: max-content;
-}
 
-.search__input {
-  width: 420px;
-  height: 35px;
-  background-color: hsl(189, 17%, 92%);
-  border: none;
-  font-size: 14px;
-  padding-inline-start: 15px;
-  border-radius: 500px;
-  transition: width 0.4s ease;
-}
+  &__input {
+    width: 420px;
+    height: 35px;
+    background-color: hsl(189, 17%, 92%);
+    border: none;
+    font-size: 14px;
+    padding-inline-start: 15px;
+    border-radius: 500px;
+    transition: width 0.4s ease;
 
-.search__input::placeholder,
-.search__icon {
-  font-size: 13px;
-  color: gray;
-}
+    &::placeholder {
+      font-size: 13px;
+      color: gray;
+    }
 
-.search__input:focus {
-  width: 450px;
-  outline: 0;
-}
+    &:focus {
+      width: 450px;
+      outline: 0;
+    }
+  }
 
-.search__submit {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
+  &__submit {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
 }
 
 .nav {
   margin-left: auto;
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__link {
+    height: 65px;
+    padding-inline: 20px;
+    display: block;
+    line-height: 65px;
+    transition: background 0.4s ease;
+
+    &:hover,
+    &:focus {
+      background: hsl(189, 17%, 92%);
+    }
+  }
+
+  &__icon {
+    font-size: 22px;
+    color: #a9b4b7;
+  }
 }
 
-.nav__list {
-  list-style: none;
-  display: flex;
-}
 
-.nav__link {
-  height: 65px;
-  padding-inline: 20px;
-  display: block;
-  line-height: 65px;
-  transition: background 0.4s ease;
-}
-
-.nav__link:hover,
-.nav__link:focus {
-  background: hsl(189, 17%, 92%);
-}
-
-.nav__icon {
-  font-size: 22px;
-  color: #a9b4b7;
-}
 
 .sidebar {
   background-color: hsl(158, 39%, 11%);
