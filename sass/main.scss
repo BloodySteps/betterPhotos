@@ -1,4 +1,35 @@
 /*
+  Variables
+*/
+$color-grey-light: hsl(190, 21%, 95%);
+$color-grey-medium: hsl(193, 9%, 69%);
+$color-grey-dark: hsl(190, 3%, 35%);
+$accent-light: hsl(160, 78%, 40%);
+$accent-dark: hsl(160, 79%, 32%);
+$clr-white: #fff;
+
+$ts: all 0.2s;
+
+// mixins
+@mixin spacingX($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// utility classes
+.u-italic { font-style: italic }
+.u-underline { text-decoration: underline }
+.u-accent { color: $accent-light }
+.u-bold { font-weight: 600 }
+.u-bolder { font-weight: 700 }
+/*
   1. Use a more-intuitive box-sizing model.
 */
 *,
@@ -117,16 +148,16 @@ h6 {
   &__input {
     width: 420px;
     height: 35px;
-    background-color: hsl(189, 17%, 92%);
+    background-color: $color-grey-light;
     border: none;
     font-size: 14px;
     padding-inline-start: 15px;
     border-radius: 500px;
-    transition: width 0.4s ease;
+    transition: $ts;
 
     &::placeholder {
       font-size: 13px;
-      color: gray;
+      color: $color-grey-dark;
     }
 
     &:focus {
@@ -157,34 +188,112 @@ h6 {
     padding-inline: 20px;
     display: block;
     line-height: 65px;
-    transition: background 0.4s ease;
+    transition: $ts;
 
     &:hover,
     &:focus {
-      background: hsl(189, 17%, 92%);
+      background: $color-grey-light;
     }
   }
 
   &__icon {
     font-size: 22px;
-    color: #a9b4b7;
+    color: $color-grey-medium;
   }
 }
 
-
-
+// --------------------------------
 .sidebar {
   background-color: hsl(158, 39%, 11%);
   grid-column: 1 / 2;
   grid-row: 2 / 4;
+
+  .intro {
+    padding-inline: 20px;
+    padding-block: 45px;
+    border-bottom: rgba($clr-white, 0.4);
+    @include spacingX(10px);
+
+    &__heading {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    &__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+  }
+
+  .social {
+    @include center;
+
+    &__img {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $clr-white;
+
+      &:where(:not(:first-child)) {
+        margin-left: -10px;
+      }
+    }
+
+    &__container {
+      margin-left: 10px;
+    }
+
+    &__text {
+      font-size: 13px;
+      color: $color-grey-medium;
+      margin-top: -2px;
+    }
+  }
+
+  .auth {
+    margin-top: 20px;
+
+    &__btn {
+      display: block;
+      background: $accent-light;
+      border-radius: 5px;
+      height: 45px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @include center;
+
+      cursor: pointer;
+      transition: $ts;
+
+      &:hover {
+        background: $accent-dark;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      margin-top: 7px;
+      font-size: 13px;
+      color: $color-grey-medium;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
+// --------------------------------
 .gallery {
   background-color: hsl(190, 21%, 95%);
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
+// --------------------------------
 .steps {
   background-color: hsl(189, 17%, 92%);
   grid-column: 2 / 3;
