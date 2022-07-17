@@ -221,7 +221,7 @@ h6 {
 .sidebar .intro {
   padding-inline: 20px;
   padding-block: 45px;
-  border-bottom: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,7 +260,7 @@ h6 {
   border: 2px solid #fff;
 }
 .sidebar .social__img:where(:not(:first-child)) {
-  margin-left: -10px;
+  margin-left: -7px;
 }
 .sidebar .social__container {
   margin-left: 10px;
