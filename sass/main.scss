@@ -24,11 +24,21 @@ $ts: all 0.2s;
 }
 
 // utility classes
-.u-italic { font-style: italic }
-.u-underline { text-decoration: underline }
-.u-accent { color: $accent-light }
-.u-bold { font-weight: 600 }
-.u-bolder { font-weight: 700 }
+.u-italic {
+  font-style: italic;
+}
+.u-underline {
+  text-decoration: underline;
+}
+.u-accent {
+  color: $accent-light;
+}
+.u-bold {
+  font-weight: 600;
+}
+.u-bolder {
+  font-weight: 700;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -56,6 +66,7 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 /*
   7. Remove built-in form typography styles
 */
@@ -112,7 +123,7 @@ h6 {
 }
 
 #app {
-  height: 1024px;
+  height: max-content;
   width: 100%;
   max-width: 1240px;
   background: #fff;
@@ -282,6 +293,74 @@ h6 {
       a:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  // uploads
+  .upload {
+    @extend .intro;
+
+    &__container {
+      height: 300px;
+      flex-direction: column;
+      @include center;
+      background: rgba($clr-white, 0.1);
+      border-radius: 4px;
+      color: $color-grey-medium;
+      transition: $ts;
+      position: relative;
+
+      &:hover {
+        background: rgba($clr-white, $alpha: 0.2);
+        cursor: copy;
+      }
+
+      &::before {
+        content: '';
+        border-radius: 4px;
+        outline: 2px dashed rgba($clr-white, $alpha: 0.2);
+        position: absolute;
+        inset: -1px;
+      }
+    }
+
+    &__icon {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__text {
+      font-size: 20px;
+      color: $clr-white;
+    }
+
+    &__alternative {
+      cursor: pointer;
+    }
+  }
+
+  // footer
+  .footer {
+    @include spacingX(5px);
+    @extend .intro;
+
+    color: $color-grey-medium;
+    justify-content: center;
+    height: max-content;
+    border-bottom: 0;
+
+    &__list {
+      list-style: none;
+      @include spacingX(10px);
+      flex-direction: row;
+      font-size: 13px;
+    }
+    &__item {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__link {
     }
   }
 }
